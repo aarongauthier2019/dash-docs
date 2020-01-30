@@ -571,11 +571,67 @@ URLS = [
         'name': 'Beyond the Basics',
         'chapters': [
             {
-                'url': '/performance',
-                'content': tutorial.performance.layout,
                 'name': 'Performance',
-                'description': 'There are two main ways to speed up dash apps: '\
-                               'caching and using WebGL chart types.'
+                'url':'/performance',
+                'description': 'Techniques to speed up your dash apps.',
+                'chapters': [
+                    {
+                        'name': 'Intro',
+                        'url': '/performance',
+                        'preamble': tutorial.performance.intro.layout,
+                        'autogenerate_index': True,
+                    },
+                    {
+                        'url': '/performance/callbacks',
+                        'name': 'Callbacks',
+                        'content': tutorial.performance.callbacks.layout,
+                        'description': '''
+                            Speed up your app's callbacks with memoization, and optimizing
+                            callback structure as well as the underlying python function. 
+                        '''
+                    },
+                    {
+                        'url': '/performance/data-transfer',
+                        'name': 'Data Transfer',
+                        'content': tutorial.performance.data_transfer.layout,
+                        'description': '''
+                            Minimize time waiting for data to move from the client's browser
+                            to your Dash app by using *clientside callbacks* and by minimizing
+                            the data that is transferred.
+                        '''
+                    },
+                    {
+                        'url': '/performance/rendering',
+                        'name': 'Plotly Graph and Browser Rendering',
+                        'content': tutorial.performance.rendering.layout,
+                        'description': '''
+                            Large graphs or too many dash components will slow down browser rendering.
+                            In this section we'll go over a few techniques to improve graph
+                            loading performance and the best app layouts that won't stress
+                            the browser.
+                        '''
+                    },
+                    {
+                        'url': '/performance/gunicorn',
+                        'name': 'Gunicorn Configuration',
+                        'content': tutorial.performance.gunicorn.layout,
+                        'description': '''
+                            `gunicorn` is the WSGI server we recommend be used to serve your
+                            dash app. Learn how to increase the number of processes it uses to run
+                            your app and other configuration options.
+                    '''
+                    },
+                    {
+                        'url': '/performance/profiling',
+                        'name': 'Dash App Profiling ',
+                        'content': tutorial.performance.profiling.layout,
+                        'description': '''
+                            Find out which of the above areas is slowing down your app using your
+                            browser development tools' profiler and get more details
+                            about where your callbacks are lagging by using the `py-spy` profiler.
+                    '''
+                    },
+                ]
             },
 
             {
